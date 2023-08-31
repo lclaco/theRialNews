@@ -5,7 +5,7 @@ antes de comenzar el desarrollo individual, para asegurarte de tener el máximo 
 
 // Tiempo asociado: 2 horas cronológicas 
 
-##Descripción 
+## Descripción 
 
 Nuestro cliente Gonzalo, busca lanzar su nuevo sitio de noticias llamado “TheRialNews” 
 donde en forma satírica informa a sus usuarios de actualidad. Busca que su plataforma sea un lugar abierto, 
@@ -15,7 +15,7 @@ donde el usuario que no se haya registrado o iniciado sesión solo podrá ver la
 Los usuarios registrados podrán dejar comentarios en las noticias, que podrán ser eliminados 
 por parte de los administradores si no lo consideran apropiados. 
 
-##Requerimientos 
+## Requerimientos 
 1. Set-up inicial del proyecto con sus relaciones y modelos.
 2. Agregar roles a los usuarios con sus permisos.
 3. Si un usuario olvida su contraseña, puede recibir un email para restablecerla.
