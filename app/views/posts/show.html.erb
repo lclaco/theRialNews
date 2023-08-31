@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+<section id="hero">
+  <div class="hero-container">
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+          <div class="section-title">
+            <h1><span>Modificar</span></h1>
+          </div>
+          <div class="row">
+            <div class="container">
+              <div class="box recommended">
+                <%= render @post %>
+              
+              <div class="btn-wrap">
+        
+              <%= link_to "Volver", posts_path, class: 'btn-buy mb-3' %>
+              
+              <% if user_signed_in? %>
+                <% if current_user.id == @post.user_id %>
+                    <%= link_to "Modificar", edit_post_path(@post), class: 'btn-buy mb-3' %>
+                    <%= button_to "Eliminar", @post, method: :delete, class:'btn-buy' %>
+                  <% end %>
+              <% end %>
+        
+              </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+    </section>   
+
+  </div>
+</section>

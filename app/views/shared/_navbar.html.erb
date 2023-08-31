@@ -1,0 +1,82 @@
+<%
+=begin%>
+ <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <%= link_to 'Rial News', root_path, class: 'navbar-brand' %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <%= link_to 'Comentarios', posts_path, class: 'nav-link' %>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 bg-primary">
+                <li class="nav-item dropdown bg-primary">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <% if user_signed_in? %>
+                        <% if current_user.name %>
+                            Hola <%= current_user.name %>
+                        <% else %>
+                            Hola <%= current_user.email %>
+                        <% end %>
+                    <% else %>
+                        Dale registrate o conectate
+                    <% end %>
+                    </a>
+                    <ul>
+                        <% if user_signed_in? %>
+                            <li><%= button_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
+                        <% else %>
+                            <li><%= link_to 'Iniciar sesión',  new_user_session_path %></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><%= link_to 'Registro',  new_user_registration_path %></li>
+                        <% end %>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> 
+<%
+=end%>
+<div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo">  <%= link_to 'Rial News', root_path, class: 'navbar-brand' %></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar">
+        <ul>
+        <li><%= link_to 'Comentarios', posts_path, class: 'nav-link scrollto active' %> </li>
+        <li class="dropdown"><a href="#">
+        <i class="bi bi-chevron-down"></i><% if user_signed_in? %>
+                        <% if current_user.name %>
+                            Hola <%= current_user.name %>
+                        <% else %>
+                            Hola <%= current_user.email %>
+                        <% end %>
+                    <% else %>
+                        Dale registrate o conectate
+                    <% end %></a>
+            <ul>
+
+              <li><% if user_signed_in? %>
+                            <li><%= button_to 'Cerrar sesión', destroy_user_session_path, class: 'dropdown-item bg-light', method: :delete %></li>
+                        <% else %>
+                            <li><%= link_to 'Iniciar sesión',  new_user_session_path, class: 'dropdown-item bg-light'%></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><%= link_to 'Registro',  new_user_registration_path, class: 'dropdown-item bg-light '%></li>
+                        <% end %></li>
+              
+                
+                
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    </div>
+</div>
